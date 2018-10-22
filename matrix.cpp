@@ -1,5 +1,5 @@
 //
-//  auxfn.cpp
+//  matrix.cpp
 //  euler2
 //
 //  Created by Joo Seung Lee on 6/16/16.
@@ -9,7 +9,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include <string>
-#include "auxfn.hpp"
+#include "matrix.hpp"
 
 using namespace std;
 
@@ -46,6 +46,25 @@ void matrix::parsematrix(string s){
         else{
             clear += s[i];
         }
+    }
+}
+
+void matrix::parsematrix2(string s, int row){
+    string clear = "";
+    int columncount = 0;
+    
+    for(int i = 0; i < s.length(); i++){
+        if(columncount == size){
+            exit(0);
+        }
+        if(s[i] == ' '){
+            int a = stoi(clear);
+            setmatrix(row, columncount, a);
+            columncount++;
+            clear = "";
+        }
+        else
+            clear += s[i];
     }
 }
 

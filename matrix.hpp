@@ -1,5 +1,5 @@
 //
-//  auxfn.hpp
+//  matrix.hpp
 //  euler2
 //
 //  Created by Joo Seung Lee on 6/16/16.
@@ -18,12 +18,13 @@ class matrix
 {
 private:
     // just change the number here to change matrix size
-    int size = 20;
     int ar[20][20];
 public:
+    int size = 20;
     matrix();
     void setmatrix(int row, int col, int k);
     void parsematrix(string s);
+    void parsematrix2(string s, int row);
     void printmatrix();
     long maxverticalproduct();
     long maxhorizontalproduct();
@@ -34,4 +35,4 @@ public:
 
 
 
-#endif /* auxfn_hpp */
+#endif /* matrix_hpp */
